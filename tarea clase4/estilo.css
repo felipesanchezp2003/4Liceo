@@ -1,0 +1,20 @@
+body{
+    text-align: center;
+    align-items: center;
+    background-color: rgb(223, 149, 39);
+}
+h1
+{
+    color: white;
+}
+h5{
+    color: white;
+}
+#tablaTareas{
+    color: rgb(104, 52, 3);
+    font-weight: 600;
+}
+th{
+    color: rgb(83, 26, 0) ;
+    font-size: large;
+}

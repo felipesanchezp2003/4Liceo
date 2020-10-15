@@ -1,0 +1,57 @@
+body{
+    background-color: seashell;
+}
+table{
+    font-size: medium;
+    font-weight: 500;
+    text-align: center;
+}
+.contacto{
+    font-weight: 700;
+}
+#compra{
+    font-size: medium;
+    font-weight: 600;
+
+}
+p{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.h{
+    text-align: center;
+    color:  seashell;
+    background-color:rgb(73, 23, 0);
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#registro{
+    text-align: center;
+}
+img{
+   width: 400px;
+   border: solid rgb(114, 37, 2) 5px;
+   margin-bottom: 20px;
+   padding: 10px;
+}
+#imagen1{
+   margin-left: 35%;
+}
+#imagen2{
+   margin-left: 35%;
+}
+#imagen3{
+    width: 300px;
+    margin-left: 38.7%;
+}
+#informacion p {
+    color: rgb(172, 75, 5);
+    font-weight: 500;
+}
+ol{
+    padding-left: 15%;
+}
+ul{
+    padding-left: 15%;
+}

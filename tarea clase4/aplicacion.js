@@ -1,10 +1,11 @@
+let valoresfila= JSON.parse(window.localStorage.getItem("valoresfila"));
+if(valoresfila ==null) valoresfila = [];
 let tabla= document.querySelector("#tablaTareas");
-let compras= [];
+
 let btn= document.querySelector("#btnAdd")
 let input= document.querySelector("#inputAdd")
 let input2= document.querySelector("#inputAdd2")
 let input3= document.querySelector("#inputAdd3")
-
 function addHeaders()
     {
         let fila= document.createElement("tr");
@@ -19,37 +20,32 @@ function addHeaders()
         fila.appendChild(enc3);
         tabla.appendChild(fila);
     }
+
 function hacerTablas(){
 tabla.innerHTML="";
 addHeaders();
- for(let i = 0; i < compras.length; i= i + 3)
+for(info of valoresfila)
 {
-    let h= i + 1;
-    let t= i + 2;
-    let fila= document.createElement("tr")
-    let tdMateria= document.createElement("td")
-    tdMateria.innerHTML= compras[i];
-    let tdDescripcion= document.createElement("td")
-    tdDescripcion.innerHTML= compras[h];
-    let tdFecha= document.createElement("td")
-    tdFecha.innerHTML= compras[t];
-    fila.appendChild(tdMateria)
-    fila.appendChild(tdDescripcion)
-    fila.appendChild(tdFecha)
+    let fila= document.createElement("tr");
+    for(valor of Object.values(info))
+    {
+        let celdaNueva = document.createElement("td");
+        celdaNueva.innerHTML= valor;
+        fila.appendChild(celdaNueva)
+    }
     tabla.appendChild(fila);
 }
+
 }
 function addItem()
 {
-    let item = input.value;
-    compras.push(item);
-    let item2 = input2.value;
-    compras.push(item2);
-    let item3 = input3.value;
-    compras.push(item3);
+    let tarea = { materia: input.value, descripcion: input2.value, Fecha:input3.value,}
+    valoresfila.push(tarea);
     hacerTablas();
+    window.localStorage.setItem("valoresfila", JSON.stringify(valoresfila));
     input.value="";
     input2.value="";
     input3.value="";
 }
 btn.onclick = addItem;
+hacerTablas();
